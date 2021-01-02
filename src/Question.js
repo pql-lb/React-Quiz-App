@@ -1,10 +1,8 @@
 import React, { Component }  from 'react';
 import Answers from './Answers';
+import Loader from 'react-loader-spinner'
 
 class Question extends Component {
-    state = {
-
-    }
     render() {
         if (this.props.activeState === false) {
         return (
@@ -16,19 +14,7 @@ class Question extends Component {
                         className='mainBtn'
                         onClick={() => {
                             this.props.activity(true)
-                
-                            let corr_answer = this.props.question.map(x => x.correct_answer)
-                            let incor_answer = this.props.question.map(x => x.incorrect_answers)
-                            let answerArray = incor_answer[0]
-                            let cor = corr_answer[0]
-                            answerArray.push(cor)
-                            for (let i = answerArray.length - 1; i > 0; i--) {
-                                const j = Math.floor(Math.random() * (i + 1));
-                                [answerArray[i], answerArray[j]] = [answerArray[j], answerArray[i]];
-                            }    
-                            this.setState({
-                                answerArray: answerArray
-                            })
+                            
                         }}
                     >
                         Begin
@@ -36,11 +22,25 @@ class Question extends Component {
                 </div>
             </div>
         )} else {
-            const question = this.props.question.map(x => x.question)
+            const {question, answered, correct, answerArray, overlay} = this.props
             return (
                 <div>
-                    {(question)}
-                    <Answers answers={this.props.question} answerArray={this.state.answerArray}/>
+                <div className="counter">{this.props.count}</div>
+                <div className="theQuestionContainer">
+                    <div className="theQuestion">
+                        {overlay === false &&
+                        (question)
+                        }
+                    </div>
+                    {overlay === false &&
+                    <Answers answered={answered} correct={correct} answerArray={answerArray}/>
+                    }
+                    {overlay === true &&
+                    <div className="top">
+                        <Loader type="ThreeDots" color="#FFFF" height={200} width={200} />
+                    </div>
+                    }
+                </div>
                 </div>
             )
         }

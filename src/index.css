@@ -12,21 +12,62 @@ code {
     monospace;
 }
 .questionP {
-  margin-top: -250px;
-  margin-bottom: 0;
+  font-family: 'poppins';
+  font-size: 30px;
+  margin-top: 150px;
+  margin-bottom: 0px;
 }
 .mainBtn {
   border: none;
-  background: rgb(88, 88, 248);
+  background: #fff;
   box-shadow: none;
-  font-family: 'Segoe UI';
-  font-size: 20px;
+  font-family: 'Poppins';
+  font-size: 22.5px;
   line-height: 20px;
-  padding-left: 25px;
-  padding-right: 25px;
-  padding-top: 10px;
-  padding-bottom: 13px;
+  padding-left: 45px;
+  padding-right: 45px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   position: relative;
-  margin-top: 0px;
-  border-radius: 4px;
+  border-radius: 10px;
+}
+.theQuestion {
+  font-family: 'poppins';  
+  font-size: 30px;
+  margin-top: -50px;
+  font-weight: 300;
+}
+.answerContainer {
+  width: 80vw;
+  margin-left: 10vw;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  justify-content: center;
+  margin-top: 50px;
+}
+.answerBtn {
+  width: 300px;
+  height: 100px;
+  font-family: 'poppins';
+  font-size: 20px;
+  border-radius: 14px;
+  background: white;
+  box-shadow: 2px 2px 15px 0.1px rgba(0,0,0,0.3);
+  border: none;
+  cursor: pointer;
+}
+.top {
+  margin-top: 40px;
+}
+.theQuestionContainer {
+  margin-top: 150px;
+}
+
+.counter {
+  margin-top: 50px;
+  margin-bottom: -125px;
+  font-family: 'poppins';
+  font-size: 40px;
+  font-weight: 200;
 }
